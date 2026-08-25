@@ -2,7 +2,7 @@
 
 > 自托管 · 多平台账号 Cookie 保险库 —— 扫码登录、自动续期、按需导出
 
-Cookie Vault 是一个轻量级自托管工具,用来统一管理你在各平台的账号登录态(Cookie)。支持**扫码登录/续期**,到期前自动提醒,需要时一键导出 Cookie 给脚本或下载工具使用。
+Cookie Vault 是一个轻量级自托管工具,用来统一管理你在各平台的账号登录态(Cookie)。支持**扫码登录/续期**,到期前自动提醒,需要时一键导出 Cookie 给AI调用脚本或下载工具使用。
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?logo=fastapi&logoColor=white)
