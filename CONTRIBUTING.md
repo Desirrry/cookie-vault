@@ -4,7 +4,7 @@
 
 ## 🐛 报告问题
 
-- 使用 [GitHub Issues](https://github.com/<your-name>/cookie-vault/issues) 提交
+- 使用 [GitHub Issues](https://github.com/Desirrry/cookie-vault/issues) 提交
 - 请包含:复现步骤、期望行为、实际行为、环境信息(OS / Docker 版本 / 日志片段)
 - 涉及具体平台扫码失败时,请附上 `docker logs cookie-vault` 中的相关日志
 

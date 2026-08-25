@@ -31,7 +31,7 @@ Cookie Vault 是一个轻量级自托管工具,用来统一管理你在各平台
 ### Docker Compose(推荐)
 
 ```bash
-git clone https://github.com/<your-name>/cookie-vault.git
+git clone https://github.com/Desirrry/cookie-vault.git
 cd cookie-vault
 
 # 设置登录密码
