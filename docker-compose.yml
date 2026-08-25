@@ -1,0 +1,26 @@
+services:
+  cookie-vault:
+    build: .
+    image: cookie-vault:latest
+    container_name: cookie-vault
+    restart: unless-stopped
+    ports:
+      - "8101:8101"
+    volumes:
+      - ./data:/data
+    environment:
+      - DATA_DIR=/data
+      - PANEL_PASSWORD=${PANEL_PASSWORD:?必须在 .env 或环境变量中设置 PANEL_PASSWORD 登录密码}
+      - SCAN_TIMEOUT=180
+    networks:
+      - homelab
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8101/api/health',timeout=5)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+networks:
+  homelab:
+    external: true

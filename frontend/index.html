@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Vault</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- 登录页 -->
+  <div id="login-view" class="login-wrap hidden">
+    <div class="login-card">
+      <div class="login-logo">🍪</div>
+      <h1>Cookie Vault</h1>
+      <p class="login-sub">多平台账号 Cookie 保险库</p>
+      <input id="login-password" type="password" placeholder="面板密码" autocomplete="current-password">
+      <button id="login-btn" class="btn primary">进入</button>
+      <div id="login-err" class="err hidden"></div>
+    </div>
+  </div>
+
+  <!-- 主界面 -->
+  <div id="main-view" class="hidden">
+    <header class="topbar">
+      <div class="brand">🍪 <span>Cookie Vault</span></div>
+      <div class="topbar-right">
+        <button id="add-platform-btn" class="btn ghost small">＋ 添加平台</button>
+        <button id="logout-btn" class="btn ghost small">退出</button>
+      </div>
+    </header>
+
+    <!-- 平台 tabs -->
+    <nav id="platform-tabs" class="tabs"></nav>
+
+    <!-- 账号区 -->
+    <main>
+      <div class="section-head">
+        <h2 id="current-platform-name">平台</h2>
+        <button id="add-account-btn" class="btn primary">＋ 添加账号</button>
+      </div>
+      <div id="account-grid" class="account-grid"></div>
+      <div id="empty-hint" class="empty hidden">还没有账号，点右上角「＋ 添加账号」扫码入库～</div>
+    </main>
+  </div>
+
+  <!-- 扫码弹窗 -->
+  <div id="scan-modal" class="modal-mask hidden">
+    <div class="modal">
+      <h3 id="scan-title">扫码登录</h3>
+      <p id="scan-hint" class="scan-hint">请使用 App 扫描二维码</p>
+      <div id="scan-qr-wrap" class="qr-wrap"><img id="scan-qr" alt="二维码"></div>
+      <div id="scan-status" class="scan-status"></div>
+      <button id="scan-close-btn" class="btn ghost">关闭</button>
+    </div>
+  </div>
+
+  <!-- 添加平台弹窗 -->
+  <div id="platform-modal" class="modal-mask hidden">
+    <div class="modal">
+      <h3>添加平台</h3>
+      <label>名称 <input id="pf-name" placeholder="如：微博"></label>
+      <label>域名 <input id="pf-domain" placeholder="如：weibo.com"></label>
+      <label>扫码模式
+        <select id="pf-mode">
+          <option value="playwright">通用浏览器扫码</option>
+          <option value="bilibili_api">B站官方 API</option>
+        </select>
+      </label>
+      <label>关键 Cookie（逗号分隔，登录成功后检测）<input id="pf-check" placeholder="如：SUB, SUBP"></label>
+      <label>图标 <input id="pf-icon" placeholder="如：📱" value="🌐" maxlength="4"></label>
+      <div class="modal-actions">
+        <button id="pf-cancel" class="btn ghost">取消</button>
+        <button id="pf-save" class="btn primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
